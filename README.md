@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JustAI
+
+JustAI is an AI chatbot designed to discuss legislative topics from Romania only.
+
+! Note: This is a work in progress and is not yet ready for production.
+
+## Overview
+
+JustAI is a web-based chatbot that leverages modern AI and web technologies to provide users with conversational access to Romanian legislative information. The application is built with a focus on accessibility, responsive design, and a smooth chat experience.
+
+## Features
+
+- **Conversational AI**: Uses OpenAI’s GPT-4.1 model (via `@ai-sdk/openai`) to generate responses.
+- **Legislation Focus**: Restricts conversation topics to Romanian legislative matters.
+- **Modern UI**: Built with React 19, Next.js 15, and Tailwind CSS for a clean, responsive interface.
+- **Streaming Responses**: Messages from the AI stream in real-time for a natural chat feel.
+- **Markdown Support**: AI responses can include formatted text and code blocks.
+- **Accessibility**: Keyboard navigation and ARIA roles for improved accessibility.
+
+## Technical Stack
+
+- **Frontend**: React 19, Next.js 15 (App Router), TypeScript, Tailwind CSS, Lucide Icons
+- **AI Integration**: `@ai-sdk/openai`, `ai` package for chat and streaming
+- **Markdown Rendering**: `react-markdown`, `remark-gfm`, `rehype-highlight`, `rehype-raw`
+- **Styling**: Tailwind CSS, custom CSS for chat and markdown
+- **Other**: Class variance authority, clsx, and utility libraries
+
+## Main Components
+
+- `app/page.tsx`: Main chat interface, handles message state and layout.
+- `components/ui/MessageList.tsx`: Renders the list of chat messages.
+- `components/ui/Message.tsx`: Renders individual messages, including markdown and code.
+- `components/ui/ChatInput.tsx`: User input area with auto-resize and submit handling.
+- `app/api/chat/route.ts`: API route for handling chat requests and streaming AI responses.
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies**:
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   # or
+   bun install
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. **Run the development server**:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   # or
+   bun dev
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. **Open** [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Customization
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- To change the AI model or provider, edit `app/api/chat/route.ts`.
+- UI and chat logic can be customized in the `components/ui/` directory.
