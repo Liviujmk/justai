@@ -1,6 +1,12 @@
 import { openai } from '@ai-sdk/openai';
 import { streamText, UIMessage, convertToModelMessages } from 'ai';
+// import { createOllama } from 'ollama-ai-provider';
 
+// const ollama = createOllama({
+//   // optional settings, e.g.
+
+//   baseURL: 'https://api.ollama.com',
+// });
 export const maxDuration = 30;
 
 export async function POST(req: Request) {
